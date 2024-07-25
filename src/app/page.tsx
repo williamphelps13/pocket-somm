@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import { useFilteredVarietals } from "../hooks";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import NoteSelector from "../components/NoteSelector";
 import Results from "../components/Results";
 
@@ -43,6 +44,7 @@ export default function Home() {
         setMinerality={setMinerality}
       />
       <Results filteredVarietals={filteredVarietals} />
+      <Footer />
     </main>
   );
 }
