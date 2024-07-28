@@ -18,12 +18,9 @@ const Results = ({ filteredVarietals }: ResultsProps) => (
       </div>
     </dl>
     {filteredVarietals.length ? (
-      <ul className="flex flex-wrap">
+      <ul className="flex flex-col items-center sm:flex-row sm:flex-wrap">
         {filteredVarietals.map((varietal) => (
-          <li
-            className="m-2 rounded-lg border border-neutral-200 p-2"
-            key={varietal.name}
-          >
+          <li className="m-2 rounded-lg sm:m-4" key={varietal.name}>
             {varietal.name}
           </li>
         ))}
