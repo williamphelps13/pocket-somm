@@ -10,9 +10,9 @@ import Results from "../components/Results";
 
 export default function Home() {
   const [color, setColor] = useState("");
-  const [acidity, setAcidity] = useState([0, 100]);
-  const [body, setBody] = useState([0, 100]);
-  const [tannin, setTannin] = useState([0, 100]);
+  const [acidity, setAcidity] = useState([25, 75]);
+  const [body, setBody] = useState([0, 50]);
+  const [tannin, setTannin] = useState([25, 75]);
   const [oak, setOak] = useState("");
   const [floral, setFloral] = useState("");
   const [minerality, setMinerality] = useState("");
@@ -28,7 +28,7 @@ export default function Home() {
   );
 
   return (
-    <main className="m-8 mx-auto flex min-h-screen max-w-4xl flex-col items-center space-y-8 rounded-lg border border-neutral-200 px-16 py-8">
+    <main className="mx-auto flex min-h-screen max-w-4xl flex-col items-center space-y-8 p-8 text-sm sm:my-16 sm:rounded-lg sm:border sm:border-neutral-200 sm:px-16 sm:py-12 sm:text-base">
       <Header />
       <NoteSelector
         color={color}

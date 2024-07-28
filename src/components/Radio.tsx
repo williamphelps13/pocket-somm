@@ -40,7 +40,7 @@ export default function Radio({
               value={value}
             />
             <label
-              className={`flex flex-grow cursor-pointer select-none justify-center rounded-xl p-2 text-neutral-500 transition-colors hover:bg-neutral-200 peer-checked:bg-tertiary-600 peer-checked:hover:bg-tertiary-700 peer-checked:text-least-contrast peer-focus:ring-2 peer-focus:ring-tertiary-500 peer-focus:ring-offset-2 peer-focus:ring-offset-neutral-100`}
+              className={`flex flex-grow cursor-pointer select-none justify-center rounded-xl p-2 text-neutral-500 transition-colors hover:bg-neutral-200 peer-checked:bg-tertiary-600 peer-checked:hover:bg-tertiary-700 peer-checked:text-least-contrast peer-focus:ring-2 peer-focus:ring-tertiary-500 peer-focus:ring-offset-2 peer-focus:ring-offset-neutral-100 truncate`}
               htmlFor={`${cId}-${value}-radio`}
               id={`${cId}-${value}-radio-label`}
             >

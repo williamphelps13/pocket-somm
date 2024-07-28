@@ -1,7 +1,7 @@
 const Header = () => (
   <header className="flex flex-col items-center space-y-4">
-    <h1 className="text-4xl">Pocket Somm</h1>
-    <p className="text-lg">
+    <h1 className="text-3xl sm:text-4xl">Pocket Somm</h1>
+    <p className="text-base sm:text-lg">
       Select the tasting notes that fit your mood and discover the varietals
       that match it.
     </p>

@@ -18,12 +18,14 @@ const Footer = () => {
       </div>
       {showPrivacyPolicy && (
         <div className="space-y-4">
-          <p className="pt-4 text-lg">
+          <p className="pt-4 text-base sm:text-lg">
             We respect your privacy and are committed to protecting any
             information that you may provide while using our website.
           </p>
           <div className="space-y-2">
-            <h2 className="text-lg font-semibold">Data Collection:</h2>
+            <h2 className="text-base font-semibold sm:text-lg">
+              Data Collection:
+            </h2>
             <ul className="list-disc pl-6">
               <li>
                 We do not collect any personal information such as names,
@@ -36,7 +38,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className="space-y-2">
-            <h2 className="text-lg font-semibold">Cookies:</h2>
+            <h2 className="text-base font-semibold sm:text-lg">Cookies:</h2>
             <ul className="list-disc pl-6">
               <li>
                 We may use cookies to enhance your browsing experience and for
@@ -49,7 +51,9 @@ const Footer = () => {
             </ul>
           </div>
           <div className="space-y-2">
-            <h2 className="text-lg font-semibold">Data Sharing:</h2>
+            <h2 className="text-base font-semibold sm:text-lg">
+              Data Sharing:
+            </h2>
             <ul className="list-disc pl-6">
               <li>
                 We do not share any personal information with third parties.
@@ -61,7 +65,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className="space-y-2">
-            <h2 className="text-lg font-semibold">Data Usage:</h2>
+            <h2 className="text-base font-semibold sm:text-lg">Data Usage:</h2>
             <ul className="list-disc pl-6">
               <li>
                 Information collected may be used for improving our services and

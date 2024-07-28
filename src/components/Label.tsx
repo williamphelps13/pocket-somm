@@ -1,12 +1,12 @@
-import { twMerge } from 'tailwind-merge'
+import { twMerge } from "tailwind-merge";
 
 type LabelProps = {
-  children: React.ReactNode
-  cId: string
-  className?: string
-  isDisabled?: boolean
-  isOptional?: boolean
-}
+  children: React.ReactNode;
+  cId: string;
+  className?: string;
+  isDisabled?: boolean;
+  isOptional?: boolean;
+};
 
 export default function Label({
   children,
@@ -19,8 +19,8 @@ export default function Label({
     <div className="flex w-full items-center justify-between">
       <label
         className={twMerge(
-          'text-base text-neutral-900',
-          isDisabled && 'text-neutral-500',
+          "text-sm text-neutral-900 sm:text-base",
+          isDisabled && "text-neutral-500",
           className,
         )}
         data-testid={`${cId}-main-label`}
@@ -32,8 +32,8 @@ export default function Label({
       {isOptional && (
         <label
           className={twMerge(
-            'text-xs text-neutral-500',
-            isDisabled && 'text-neutral-400',
+            "text-xs text-neutral-500",
+            isDisabled && "text-neutral-400",
           )}
           data-testid={`${cId}-optional-label`}
           htmlFor={cId}
@@ -43,5 +43,5 @@ export default function Label({
         </label>
       )}
     </div>
-  )
+  );
 }
