@@ -26,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} bg-least-contrast text-most-contrast`}>
         {children}
         <SpeedInsights />
       </body>

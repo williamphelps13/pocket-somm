@@ -1,5 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
 
+export type Theme = "light" | "dark";
+
 export type NoteSelectorProps = {
   color: string;
   setColor: Dispatch<SetStateAction<string>>;

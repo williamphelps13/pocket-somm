@@ -1,11 +1,11 @@
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { varietals } from "./constants";
 import {
   convertAcidityMarks,
   convertBodyMarks,
   convertTanninMarks,
 } from "./helpers";
-import { Varietal } from "./types";
+import { Theme, Varietal } from "./types";
 
 export function useFilteredVarietals(
   color: string,
@@ -55,3 +55,22 @@ export function useFilteredVarietals(
     );
   }, [color, acidity, body, tannin, oak, floral, minerality]);
 }
+
+export const useTheme = () => {
+  const [theme, setTheme] = useState<Theme>(
+    () => (localStorage.getItem("theme") as Theme) || "light",
+  );
+
+  useEffect(() => {
+    const root = document.documentElement;
+    const isDark = theme === "dark";
+    root.classList.toggle("dark", isDark);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+  };
+
+  return [theme, toggleTheme] as const;
+};
