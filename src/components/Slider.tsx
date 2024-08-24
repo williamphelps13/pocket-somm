@@ -56,21 +56,23 @@ export default function Slider({
         marks={markPositions}
         onChange={onChange}
         pearling={isPearling}
-        renderMark={(props) => (
-          <span
-            {...props}
-            className={`h-4 w-4 rounded-full ${
-              value &&
-              (props?.key as number) >= value[0] &&
-              (props?.key as number) <= value[1]
-                ? "cursor-pointer bg-tertiary-400 hover:bg-tertiary-500"
-                : "cursor-pointer bg-neutral-300 hover:bg-neutral-400"
-            }`}
-          />
-        )}
-        renderTrack={(props, state) => (
+        renderMark={({ key, ...rest }) => {
+          return (
+            <span
+              key={key}
+              {...rest}
+              className={`h-4 w-4 rounded-full ${
+                value && key as number >= value[0] && key as number <= value[1]
+                  ? "cursor-pointer bg-tertiary-400 hover:bg-tertiary-500"
+                  : "cursor-pointer bg-neutral-300 hover:bg-neutral-400"
+              }`}
+            />
+          );
+        }}
+        renderTrack={({ key, ...rest }, state) => (
           <div
-            {...props}
+            key={key}
+            {...rest}
             className={`h-2 rounded-full ${
               state.index === 1 ? "bg-tertiary-400" : "bg-neutral-300"
             }`}
