@@ -56,16 +56,36 @@ export function useFilteredVarietals(
   }, [color, acidity, body, tannin, oak, floral, minerality]);
 }
 
+
+const getStoredTheme = (): Theme | null => {
+  if (typeof window === "undefined") return null;
+
+  return localStorage.getItem("theme") as Theme;
+};
+
+const getSystemTheme = (): Theme => {
+  if (typeof window === "undefined") return "light";
+
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+  return prefersDark ? "dark" : "light";
+};
+
+const applyTheme = (theme: Theme) => {
+  const root = document.documentElement;
+  const isDark = theme === "dark";
+  
+  root.classList.toggle("dark", isDark);
+  localStorage.setItem("theme", theme);
+};
+
 export const useTheme = () => {
-  const [theme, setTheme] = useState<Theme>(
-    () => (localStorage.getItem("theme") as Theme) || "light",
-  );
+  const [theme, setTheme] = useState<Theme>(() => {
+    return getStoredTheme() || getSystemTheme();
+  });
 
   useEffect(() => {
-    const root = document.documentElement;
-    const isDark = theme === "dark";
-    root.classList.toggle("dark", isDark);
-    localStorage.setItem("theme", theme);
+    applyTheme(theme);
   }, [theme]);
 
   const toggleTheme = () => {
